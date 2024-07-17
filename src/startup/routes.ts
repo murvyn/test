@@ -12,7 +12,7 @@ import 'dotenv/config'
 
 export const routes = (app: Application) => {
   const corsOptions: CorsOptions = {
-    origin: "http://localhost:5173",
+    origin: "https://chat-forum.vercel.app",
     credentials: true
   }
 

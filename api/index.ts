@@ -24,7 +24,7 @@ const port = process.env.PORT || 5000;
 const httpServer = createServer(app);
 const io = new Server(httpServer, {
   cors: {
-    origin: "http://localhost:5173",
+    origin: "https://chat-forum.vercel.app",
     methods: ["GET", "POST"],
     credentials: true,
   },
