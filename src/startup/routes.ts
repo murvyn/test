@@ -12,7 +12,7 @@ import 'dotenv/config'
 
 export const routes = (app: Application) => {
   const corsOptions: CorsOptions = {
-    origin: process.env.FRONTEND_URL,
+    origin: "http://localhost:5173",
     credentials: true
   }
 

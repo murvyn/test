@@ -24,7 +24,7 @@ const port = process.env.PORT || 5000;
 const httpServer = createServer(app);
 const io = new Server(httpServer, {
   cors: {
-    origin: process.env.FRONTEND_URL,
+    origin: "http://localhost:5173",
     methods: ["GET", "POST"],
     credentials: true,
   },
