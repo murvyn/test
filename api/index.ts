@@ -24,7 +24,7 @@ const port = process.env.PORT || 5000;
 const httpServer = createServer(app);
 const io = new Server(httpServer, {
   cors: {
-    origin: "https://chat-forum.vercel.app",
+    origin: "https://bejewelled-daifuku-0e6a9c.netlify.app",
     methods: ["GET", "POST"],
     credentials: true,
   },

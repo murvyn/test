@@ -12,7 +12,7 @@ import 'dotenv/config'
 
 export const routes = (app: Application) => {
   const corsOptions: CorsOptions = {
-    origin: "https://chat-forum.vercel.app",
+    origin: "https://bejewelled-daifuku-0e6a9c.netlify.app",
     credentials: true
   }
 
