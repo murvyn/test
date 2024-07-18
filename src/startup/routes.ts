@@ -16,6 +16,7 @@ export const routes = (app: Application) => {
     credentials: true
   }
 
+  
   app.use(express.json());
   app.use(express.json());  
   app.use(cors(corsOptions));
