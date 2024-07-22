@@ -12,7 +12,7 @@ import 'dotenv/config'
 
 export const routes = (app: Application) => {
   const corsOptions: CorsOptions = {
-    origin: "https://bejewelled-daifuku-0e6a9c.netlify.app",
+    origin: process.env.FRONTEND_URL,
     credentials: true
   }
 

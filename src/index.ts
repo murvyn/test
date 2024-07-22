@@ -46,12 +46,13 @@
 //     io.emit("getOnlineUsers", onlineUsers);
 
 //     const user = await User.findById(userId).populate("courses");
-//     if (user && user.courses) {
+//        if (user && user.courses) {
 //       const userCourses = user.courses;
 //       const userCourseIds = userCourses.map((course) => course._id.toString());
 //       userCourseIds.forEach((courseId) => {
 //         if (!socket.rooms.has(courseId)) {
 //           socket.join(courseId);
+//           console.log(`User ${userId} joined room ${courseId}`);
 //         }
 //       });
 //     }
@@ -62,6 +63,12 @@
 //       );
 //       if (recipientSocket) {
 //         io.to(recipientSocket.socketId).emit("getMessage", message);
+//         io.to(recipientSocket.socketId).emit("getNotifications", {
+//           sender: message.sender,
+//           isRead: false,
+//           date: new Date(),
+//           chatId: message.chatId
+//         })
 //       } else {
 //         console.warn("Recipient not found:", message.recipientId);
 //         // You can emit an error message to the sender here
@@ -70,7 +77,14 @@
 //   }
 
 //   socket.on("sendGroupMessage", (groupMessage) => {
-//     io.to(groupMessage.groupId).emit("getGroupMessage", groupMessage);
+//     io.to(groupMessage.courseId).emit("getGroupMessage", groupMessage);
+//     io.to(groupMessage.courseId).emit("getGroupNotifications", {
+//       sender: groupMessage.sender,
+//       isRead: false,
+//       date: new Date(),
+//       courseId: groupMessage.courseId,
+//       chatId: groupMessage.chatId
+//     })
 //   });
 
 //   socket.on("disconnect", (reason) => {
