@@ -1,5 +1,5 @@
 import { Server } from "socket.io";
-import User from "../../server/src/models/userModel.ts"
+// import User from "../../server/src/models/userModel.ts"
 import express from "express";
 
 const app = express()
