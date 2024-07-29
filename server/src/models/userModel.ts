@@ -58,6 +58,7 @@ const userSchema = new Schema<IUser>({
     minlength: 10,
     maxlength: 10,
     match: /^\d{10}$/,
+    index: true,
   },
   password: {
     type: String,
