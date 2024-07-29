@@ -1,6 +1,6 @@
-import { Server } from "socket.io";
+const { Server } = require("socket.io");
 // import User from "../../server/src/models/userModel.ts"
-import express from "express";
+const express = require("express");
 
 const app = express()
 
