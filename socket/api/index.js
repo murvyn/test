@@ -27,17 +27,18 @@ const io = new Server({
   
       io.emit("getOnlineUsers", onlineUsers);
   
-      const user = await User.findById(userId).populate("courses");
-         if (user && user.courses) {
-        const userCourses = user.courses;
-        const userCourseIds = userCourses.map((course) => course._id.toString());
-        userCourseIds.forEach((courseId) => {
-          if (!socket.rooms.has(courseId)) {
-            socket.join(courseId);
-            console.log(`User ${userId} joined room ${courseId}`);
-          }
-        });
-      }
+      // const user = await User.findById(userId).populate("courses");
+      // const user = fetch()
+      //    if (user && user.courses) {
+      //   const userCourses = user.courses;
+      //   const userCourseIds = userCourses.map((course) => course._id.toString());
+      //   userCourseIds.forEach((courseId) => {
+      //     if (!socket.rooms.has(courseId)) {
+      //       socket.join(courseId);
+      //       console.log(`User ${userId} joined room ${courseId}`);
+      //     }
+      //   });
+      // }
   
       socket.on("sendMessage", (message) => {
         const recipientSocket = onlineUsers.find(
@@ -82,7 +83,7 @@ const io = new Server({
     });
   });
 
-  io.listen(3000)
+  io.listen(4000)
 
   app.get("/", (req, res) => res.send("Express on Vercel"));
 
